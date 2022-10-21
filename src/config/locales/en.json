@@ -1,0 +1,25 @@
+{
+  "common": {
+    "save": "Save",
+    "edit": "Edit",
+    "cancel": "Cancel",
+    "delete": "Delete"
+  },
+  "landing": {
+    "title": "title translated"
+  },
+  "pages": {
+    "document": "Docs",
+    "api": "APIs",
+    "support": "Support",
+    "forum": "Forum",
+    "app": "Apps"
+  },
+  "nexon": {
+    "appName": "Nexon Developer Center",
+    "adminPage": "Admin Page",
+    "english": "English",
+    "korean": "Korean",
+    "homePage": "Homepage"
+  }
+}

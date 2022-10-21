@@ -1,0 +1,6 @@
+tailwind.config.js
+jest.config.js
+postcss.config.js
+build
+package.json
+tsconfig.json

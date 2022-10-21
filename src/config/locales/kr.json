@@ -1,0 +1,16 @@
+{
+  "general": {
+    "save": "저장",
+    "edit": "수정",
+    "cancel": "취소",
+    "delete": "삭제하기"
+  },
+
+  "nexon": {
+    "appName": "Nexon Developer Center",
+    "adminPage": "Admin Page",
+    "english": "English",
+    "korean": "Korean",
+    "homePage": "Homepage"
+  }
+}
