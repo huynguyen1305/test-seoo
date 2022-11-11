@@ -12,14 +12,16 @@ export const resources = {
   }
 }
 
-i18n.use(initReactI18next).init({
-  // eslint-disable-next-line no-undef
-  lng: localStorage.getItem('pref-lang') || 'en',
-  fallbackLng: 'en',
-  interpolation: {
-    escapeValue: false // not needed for react as it escapes by default
-  },
-  resources
-})
+i18n
+  .use(initReactI18next)
+  .init({
+    lng: localStorage.getItem('pref-lang') || 'en',
+    fallbackLng: 'en',
+    interpolation: {
+      escapeValue: false // not needed for react as it escapes by default
+    },
+    resources
+  })
+  .catch(error => console.error(error))
 
 export default i18n

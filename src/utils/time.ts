@@ -11,9 +11,6 @@ dayjs.locale('vi')
 dayjs.extend(LocalizedFormat)
 
 export default function formatDTime(dt: string) {
-  // if (dayjs(dt).isToday()) {
-  //   return dayjs(dt).fromNow();
-  // } else
   return dayjs(dt).format('HH:mm')
 }
 

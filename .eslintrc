@@ -1,18 +1,20 @@
+//On Production: enable "recommended-requiring-type-checking" and "no-explicit-any"
+
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "prettier"
-  ],
+  "plugins": ["prettier", "@typescript-eslint"],
   "extends": [
-    "airbnb",
-    "airbnb-typescript",
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier"
   ],
   "parserOptions": {
+    "sourceType": "module",
     "project": "./tsconfig.json"
   },
   "root": true,
+  "ignorePatterns": ["src/**/*.test.ts", "src/**/*.test.tsx"],
   "rules": {
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-explicit-any": [
@@ -39,7 +41,9 @@
       "files": [
         "**/*.ts?(x)",
         "**/*.spec.js",
-        "**/*.spec.jsx"
+        "**/*.spec.jsx",
+        "**/*.test.ts",
+        "**/*.test.tsx"
       ],
       "env": {
         "jest": true
@@ -53,19 +57,16 @@
             "singleQuote": true,
             "bracketSpacing": true,
             "trailingComma": "none",
-            "arrowParens": "avoid"
+            "arrowParens": "avoid",
+            "endOfLine": "auto"
           }
         ]
       }
     },
     {
-      "files": [
-        "**/*.json"
-      ],
+      "files": ["**/*.json"],
       "rules": {
-        "prettier/prettier": [
-          "warn"
-        ],
+        "prettier/prettier": ["warn"],
         "@typescript-eslint/no-unused-expressions": "off"
       }
     }

@@ -42,9 +42,6 @@ export default function AppThemeProvider({
         withGlobalStyles
         inherit
         theme={{
-          fontFamily: 'Roboto,sans-serif',
-          headings: { fontFamily: 'Roboto,sans-serif' },
-          fontFamilyMonospace: 'Roboto,sans-serif',
           colorScheme,
           defaultRadius: 'xl',
           components: {

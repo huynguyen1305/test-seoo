@@ -1,55 +1,24 @@
-// Use global style
-import 'styles/global.scss'
-
 import { withTranslation } from 'react-i18next'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import { Helmet } from 'react-helmet-async'
+import Page1 from 'app/pages/Page1/index'
 
-import Landing from 'app/pages/HomePage'
-import NotFoundPage from 'app/components/NotFoundPage'
-import {
-  ABOUT,
-  API,
-  APPLICATION,
-  DOC,
-  FORUM,
-  MY_APP,
-  SUPPORT
-} from 'common/routes'
 import AppThemeProvider from './theme'
-import AboutPage from './pages/About'
-import Document from './pages/Document'
-import Api from './pages/Api'
-import Support from './pages/Support'
-import Forum from './pages/Forum'
-import Application from './pages/Application'
-import MyApp from './pages/MyApp'
-import EntryPage from './pages/Entrance'
+import HomePage from './pages/HomePage'
+import AppLayout from './components/AppLayout'
+import ErrorPage from './pages/ErrorPage'
 
-function App({ i18n }) {
+function App() {
   return (
     <AppThemeProvider>
       <BrowserRouter>
-        <Helmet
-          titleTemplate="%s - React Boilerplate"
-          defaultTitle="React Boilerplate"
-          htmlAttributes={{ lang: i18n?.language || 'en' }}
-        >
-          <meta name="description" content="A React Boilerplate application" />
-        </Helmet>
-
         <Routes>
-          <Route element={<EntryPage />}>
-            <Route index element={<Landing />} />
-            <Route path={ABOUT} element={<AboutPage />} />
-            <Route path={DOC} element={<Document />} />
-            <Route path={API} element={<Api />} />
-            <Route path={SUPPORT} element={<Support />} />
-            <Route path={FORUM} element={<Forum />} />
-            <Route path={APPLICATION} element={<Application />} />
-            <Route path={MY_APP} element={<MyApp />} />
-            <Route path="*" element={<NotFoundPage />} />
+          <Route element={<AppLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="page1" element={<Page1 />} />
+
+            {/* Handle Error Page with code */}
+            <Route path=":code" element={<ErrorPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

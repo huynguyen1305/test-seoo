@@ -7,18 +7,20 @@ import 'sanitize.css/sanitize.css'
 // Import root app
 import { HelmetProvider } from 'react-helmet-async'
 import { Provider } from 'react-redux'
+import ErrorBoundary from 'app/components/ErrorBoundary/ErrorBoundary'
 import App from './app'
 import reportWebVitals from './reportWebVitals'
 import { store } from './@redux/store'
 import 'config/locales/config'
 
-// eslint-disable-next-line no-undef
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <Provider store={store}>
     <HelmetProvider>
       <React.StrictMode>
-        <App />
+        <ErrorBoundary>
+          <App />
+        </ErrorBoundary>
       </React.StrictMode>
     </HelmetProvider>
   </Provider>
