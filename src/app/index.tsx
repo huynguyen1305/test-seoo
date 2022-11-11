@@ -1,7 +1,7 @@
 import { withTranslation } from 'react-i18next'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import Page1 from 'app/pages/Page1/index'
+import Page1 from 'app/pages/Page1'
 
 import AppThemeProvider from './theme'
 import HomePage from './pages/HomePage'

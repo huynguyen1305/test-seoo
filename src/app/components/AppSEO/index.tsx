@@ -14,8 +14,7 @@ type Props = {
 
 function AppSEO(props: Props) {
   const siteName = 'React Boilerplate'
-  const { children, title, description, image, keywords, locale, type, url } =
-    props
+  const { children, title, description, keywords } = props
   return (
     <Helmet>
       <title>
